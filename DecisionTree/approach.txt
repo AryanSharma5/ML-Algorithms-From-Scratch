@@ -1,0 +1,14 @@
+Training:
+
+	1. Start from root node and at each node select the best split based on the best 	information gain.
+	2. Greedy search: Loop over all features and over all thresholds (all possible 	   feature values).
+	3. Save the best split feature and split threshold at each node.
+	4. Build the tree recursively.
+	5. Apply some stopping criteria to stop growing tree e.g. maximum depth, minimum 	samples at each node, etc.
+	6. When we have a leaf node, store the most common class label of this node.
+
+Prediction:
+
+	1. Traverse the tree recursively.
+	2. At each node look at the best split feature of the test feature vector x and 	go left or right depending on x[feature_idx] <= threshold.
+	3. When we reach the leaf node we return the stored most common class label.
